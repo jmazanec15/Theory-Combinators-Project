@@ -1,0 +1,11 @@
+Ia
+(Ia)(Ib)
+(Ib)a
+I((Ia)(Ib))
+(Ib)(ab)(Ia)
+---------
+a
+ab
+ba
+ab
+baba

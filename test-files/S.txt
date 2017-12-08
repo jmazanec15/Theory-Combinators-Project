@@ -1,0 +1,11 @@
+Sabc
+(Sbac)(Scab)
+Sa(bc)b
+S(cc)(aa)(bb)
+Sbcaabc
+----------
+ac(bc)
+bc(ac)cb(ab)
+ab((bc)b)
+(cc)(bb)((aa)(bb))
+ba(ca)abc
