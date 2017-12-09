@@ -48,40 +48,39 @@ def list_expr(expr):
 def evaluate(expr):
 	expressions = list_expr(expr)
 	ind = 0
-	## ((Ia)(Ib))
 	while ind < len(expressions):
-		old = copy.deepcopy(expressions)
 		print expressions
+		old = copy.deepcopy(expressions)
 		if len(expressions[ind]) == 0:
+			## Remove empty lists
 			expressions.pop(ind)
 		elif expressions[ind][0] == "I":
+			## Remove I's for identities
 			expressions[ind].pop(0)
 			print print_expr(old) + " => " + print_expr(expressions)
 		elif expressions[ind][0] == "K":
+			## Need to be able to pop the first and third arguments
 			expressions[ind].pop(0)
 			expressions[ind].pop(1)
 			print print_expr(old) + " => " + print_expr(expressions)
 		elif expressions[ind][0] == "(":
-			# get children expressions
+			## Get children expressions and add them to expressions
 			new_expressions = list_expr(expressions[ind])
 			expressions.pop(ind)
 			for i, exp in enumerate(new_expressions):
 				expressions.insert(ind+i, exp)
 			print print_expr(old) + " => " + print_expr(expressions)
 		else:
+			## Create string from list of literals
 			expressions[ind] = "".join(expressions[ind])
 			ind += 1
 
 	return "".join(expressions)
-
-
-
-	
 	
 def main():
 	stop = False
 	for line in sys.stdin:
-		if line.rstrip() == "---------":
+		if line.rstrip()[0] == "-":
 			stop = True
 		if stop:
 			print line.rstrip()
@@ -90,8 +89,6 @@ def main():
 			expr.insert(0, "(")
 			expr.append(")")
 			print evaluate(expr)
-
-
 
 if __name__ == "__main__":
 	main()
