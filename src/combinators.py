@@ -3,97 +3,106 @@
 import sys
 import copy
 
-def print_expr(expr):
+def p_out(expr):
 	output = ""
-	for ex in expr:
-		if len(ex) == 0:
-			pass
-		elif len(ex) > 1:
-			output += "("
-			output += ex
-			output += ")"
+	for item in expr:
+		if type(item) is not list:
+			output += item
 		else:
-			output += ex
+			output += p_out(item)
+
 	return output
 
-def list_expr(expr):
-	## Make subsets of strings
+def remove_p(expr):
+	if expr[0] != "(": return expr
 	opened = 0
-	expressions = list()
-	curr = list()
-	for char in list(expr):
-		if char == "(" and opened == 0:
+	for i, val in enumerate(expr):
+		if val == "(":
 			opened += 1
-			if len(curr): expressions.append("".join(curr))
-			curr = list()
+		elif val == ")" and opened == 1 and i != len(expr) - 1:
+			return expr
+		elif val == ")":
+			opened -= 1
+	return expr[1:-1]
+
+def split_expr(expr):
+	cafs = list()
+	current_caf = ""
+	opened = 0
+	for char in expr:
+		if char == "(" and opened == 0:
+			if len(current_caf): cafs.append(current_caf)
+			opened += 1
+			current_caf = char
 		elif char == ")" and opened == 1:
 			opened -= 1
-			if len(curr): expressions.append("".join(curr))
-			curr = list()
+			current_caf += char
+			cafs.append(current_caf)
+			current_caf = ""
 		elif char == "(":
 			opened += 1
-			curr.append(char)
+			current_caf += char
 		elif char == ")":
 			opened -= 1
-			curr.append(char)
-		elif opened != 0:
-			curr.append(char)
+			current_caf += char
+		elif opened == 0:
+			current_caf = char
+			cafs.append(current_caf)
+			current_caf = ""
 		else:
-			expressions.append(char)
-			curr = list()
-	if len(curr): expressions.append("".join(curr))
-	return expressions
+			current_caf += char
+	if len(current_caf): cafs.append(current_caf)
+	return cafs
 
-def evaluate(expr):
-	expressions = list_expr(expr)
+def evaluate(expr, exp2):
 	ind = 0
-	while ind < len(expressions):
-		old = copy.deepcopy(expressions)
-		if len(expressions[ind]) == 0:
-			## Remove empty lists
-			expressions.pop(ind)
-		elif expressions[ind] == "I" and len(expressions[ind]) == 1:
-			## Remove I's for identities
-			expressions.pop(ind)
-			print print_expr(old) + " => " + print_expr(expressions)
-		elif expressions[ind] == "K" and len(expressions[ind]) == 1:
-			## Need to be able to pop the first and third arguments
-			expressions.pop(ind)
-			expressions.pop(ind + 1)
-			print print_expr(old) + " => " + print_expr(expressions)
-		elif expressions[ind] == "S" and len(expressions[ind]) == 1:
-			## Pop the S
-			expressions.pop(ind)
-			expressions.insert(ind + 1, expressions[ind+2])
-			## Make bc the next arguemnt
-			new_arg = expressions[ind+2] + expressions[ind+3]
-			expressions.insert(ind + 2, new_arg)
-			expressions.pop(ind + 3)
-			expressions.pop(ind + 3)
-			print print_expr(old) + " => " + print_expr(expressions)
-		elif len(expressions[ind]) != 1:
-			## Get children expressions and add them to expressions
-			new_expressions = list_expr(expressions[ind])
-			expressions.pop(ind)
-			for i, exp in enumerate(new_expressions):
-				expressions.insert(ind+i, exp)
-			print print_expr(old) + " => " + print_expr(expressions)
+	while ind < len(expr):
+		old_exp = copy.deepcopy(exp2)
+		if ind == 0:
+			while expr[0][0] == "(" and ("I" in expr[ind] or "K" in expr[ind] or "S" in expr[ind]):
+				top = expr.pop(ind)
+				top = remove_p(top)
+				top = split_expr(top)
+				for i, val in enumerate(top):
+					expr.insert(i, val)
+				print p_out(old_exp) + " => " + p_out(exp2)
+				old_exp = copy.deepcopy(exp2)
+		if expr[ind] == "I":
+			expr.pop(ind)
+			print p_out(old_exp) + " => " + p_out(exp2)
+		elif expr[ind] == "K":
+			expr.pop(ind)
+			expr.pop(ind+1)
+			print p_out(old_exp) + " => " + p_out(exp2)
+		elif expr[ind] == "S":
+			expr.pop(ind)
+			expr.insert(ind+1, expr[ind + 2])
+			tmp = str(expr[ind+2]) + str(expr[ind+3])
+			expr[ind+2] = "(" + tmp + ")"
+			expr.pop(ind+3)
+			print p_out(old_exp) + " => " + p_out(exp2)
+		elif len(expr[ind]) > 1 and ("I" in expr[ind] or "K" in expr[ind] or "S" in expr[ind]):
+			expr[ind] = remove_p(expr[ind])
+			expr[ind] = split_expr(expr[ind])
+			evaluate(expr[ind], exp2) ## recursion
 		else:
 			ind += 1
 
-	return "".join(expressions)
-	
 def main():
 	stop = False
 	for line in sys.stdin:
-		if line.rstrip()[0] == "-":
+		if line[0] == "-":
 			stop = True
-		if stop:
-			print line.rstrip()
-		else:
-			expr = line.rstrip()
-			evaluate(expr)
+		if not stop:
+			expression = list(line.rstrip())
+			expression = remove_p(expression)
+			expression = split_expr(expression)
+			exp2 = expression
+			evaluate(expression, exp2)
+			print p_out(expression)
 			print ""
+		else:
+			print line.rstrip()
 
 if __name__ == "__main__":
 	main()
