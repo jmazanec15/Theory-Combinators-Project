@@ -1,0 +1,49 @@
+SKKb => Kb(Kb)
+Kb(Kb) => b
+b
+
+SKba => Ka(ba)
+Ka(ba) => a
+a
+
+I(SKab)I(SKKa)b => (SKab)I(SKKa)b
+(SKab)I(SKKa)b => SKabI(SKKa)b
+SKabI(SKKa)b => Kb(ab)I(SKKa)b
+Kb(ab)I(SKKa)b => bI(SKKa)b
+bI(SKKa)b => b(SKKa)b
+bSKKab => bKa(Ka)b
+bKa(Ka)b => bab
+bab
+
+S(K(SI))Kba => (K(SI))b(Kb)a
+(K(SI))b(Kb)a => K(SI)b(Kb)a
+K(SI)b(Kb)a => (SI)(Kb)a
+(SI)(Kb)a => SI(Kb)a
+SI(Kb)a => Ia((Kb)a)
+Ia((Kb)a) => a((Kb)a)
+a(Kb)a => aKba
+aKba => ab
+ab
+
+S(K(SI))(S(KK)I)ab => (K(SI))a((S(KK)I)a)b
+(K(SI))a((S(KK)I)a)b => K(SI)a((S(KK)I)a)b
+K(SI)a((S(KK)I)a)b => (SI)((S(KK)I)a)b
+(SI)((S(KK)I)a)b => SI((S(KK)I)a)b
+SI((S(KK)I)a)b => Ib(((S(KK)I)a)b)
+Ib(((S(KK)I)a)b) => b(((S(KK)I)a)b)
+b((S(KK)I)a)b => b(S(KK)I)ab
+b(S(KK)I)ab => bS(KK)Iab
+bS(KK)Iab => b(KK)a(Ia)b
+b(KK)a(Ia)b => bKKa(Ia)b
+bKKa(Ia)b => bK(Ia)b
+bK(Ia)b => b(Ia)
+b(Ia) => bIa
+bIa => ba
+ba
+
+----------
+b
+a
+bab
+ab
+ba

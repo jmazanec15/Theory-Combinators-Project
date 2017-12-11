@@ -1,0 +1,67 @@
+Bxyz => (S(KS)K)xyz
+(S(KS)K)xyz => S(KS)Kxyz
+S(KS)Kxyz => (KS)x(Kx)yz
+(KS)x(Kx)yz => KSx(Kx)yz
+KSx(Kx)yz => S(Kx)yz
+S(Kx)yz => (Kx)z(yz)
+(Kx)z(yz) => Kxz(yz)
+Kxz(yz) => x(yz)
+x(yz)
+
+BBabcd => (S(KS)K)Babcd
+(S(KS)K)Babcd => S(KS)KBabcd
+S(KS)KBabcd => (KS)B(KB)abcd
+(KS)B(KB)abcd => KSB(KB)abcd
+KSB(KB)abcd => S(KB)abcd
+S(KB)abcd => (KB)b(ab)cd
+(KB)b(ab)cd => KBb(ab)cd
+KBb(ab)cd => B(ab)cd
+B(ab)cd => (S(KS)K)(ab)cd
+(S(KS)K)(ab)cd => S(KS)K(ab)cd
+S(KS)K(ab)cd => (KS)(ab)(K(ab))cd
+(KS)(ab)(K(ab))cd => KS(ab)(K(ab))cd
+KS(ab)(K(ab))cd => S(K(ab))cd
+S(K(ab))cd => (K(ab))d(cd)
+(K(ab))d(cd) => K(ab)d(cd)
+K(ab)d(cd) => (ab)(cd)
+(ab)(cd)
+
+BBBBabcde => (S(KS)K)BBBabcde
+(S(KS)K)BBBabcde => S(KS)KBBBabcde
+S(KS)KBBBabcde => (KS)B(KB)BBabcde
+(KS)B(KB)BBabcde => KSB(KB)BBabcde
+KSB(KB)BBabcde => S(KB)BBabcde
+S(KB)BBabcde => (KB)B(BB)abcde
+(KB)B(BB)abcde => KBB(BB)abcde
+KBB(BB)abcde => B(BB)abcde
+B(BB)abcde => (S(KS)K)(BB)abcde
+(S(KS)K)(BB)abcde => S(KS)K(BB)abcde
+S(KS)K(BB)abcde => (KS)(BB)(K(BB))abcde
+(KS)(BB)(K(BB))abcde => KS(BB)(K(BB))abcde
+KS(BB)(K(BB))abcde => S(K(BB))abcde
+S(K(BB))abcde => (K(BB))b(ab)cde
+(K(BB))b(ab)cde => K(BB)b(ab)cde
+K(BB)b(ab)cde => (BB)(ab)cde
+(BB)(ab)cde => BB(ab)cde
+BB(ab)cde => (S(KS)K)B(ab)cde
+(S(KS)K)B(ab)cde => S(KS)KB(ab)cde
+S(KS)KB(ab)cde => (KS)B(KB)(ab)cde
+(KS)B(KB)(ab)cde => KSB(KB)(ab)cde
+KSB(KB)(ab)cde => S(KB)(ab)cde
+S(KB)(ab)cde => (KB)c((ab)c)de
+(KB)c((ab)c)de => KBc((ab)c)de
+KBc((ab)c)de => B((ab)c)de
+B((ab)c)de => (S(KS)K)((ab)c)de
+(S(KS)K)((ab)c)de => S(KS)K((ab)c)de
+S(KS)K((ab)c)de => (KS)((ab)c)(K((ab)c))de
+(KS)((ab)c)(K((ab)c))de => KS((ab)c)(K((ab)c))de
+KS((ab)c)(K((ab)c))de => S(K((ab)c))de
+S(K((ab)c))de => (K((ab)c))e(de)
+(K((ab)c))e(de) => K((ab)c)e(de)
+K((ab)c)e(de) => ((ab)c)(de)
+((ab)c)(de)
+
+------
+x(yz)
+(ab)(cd)
+((ab)c)(de)

@@ -1,0 +1,22 @@
+Ya => a(Ya)
+a(Ya)
+
+YaYa => a(Ya)Ya
+a(Ya)Ya => a(Ya)a(Ya)
+a(Ya)a(Ya)
+
+K(Yab)c => (Yab)
+(Yab) => Yab
+Yab => a(Ya)b
+a(Ya)b
+
+K(Y(a))ab => (Y(a))b
+(Y(a))b => Y(a)b
+Y(a)b => (a)(Y(a))b
+(a)(Y(a))b
+
+--------
+a(Ya)
+a(Ya)a(Ya)
+a(Ya)b
+a(Y(a))b

@@ -1,0 +1,11 @@
+Kba
+(Kbb)(Kab)
+(K(Kab)(Kaa))
+(Kab)(b)
+(K(Kab)(Kbb))(Kaa)
+----------
+b
+ba
+a
+ab
+aa

@@ -1,0 +1,58 @@
+Wxy => (SS(SK))xy
+(SS(SK))xy => SS(SK)xy
+SS(SK)xy => Sx((SK)x)y
+Sx((SK)x)y => xy(((SK)x)y)
+xy((SK)x)y => xy(SK)xy
+xy(SK)xy => xySKxy
+xySKxy => xyKy(xy)
+xyKy(xy) => xyy
+xyy
+
+Wxz => (SS(SK))xz
+(SS(SK))xz => SS(SK)xz
+SS(SK)xz => Sx((SK)x)z
+Sx((SK)x)z => xz(((SK)x)z)
+xz((SK)x)z => xz(SK)xz
+xz(SK)xz => xzSKxz
+xzSKxz => xzKz(xz)
+xzKz(xz) => xzz
+xzz
+
+Wii => (SS(SK))ii
+(SS(SK))ii => SS(SK)ii
+SS(SK)ii => Si((SK)i)i
+Si((SK)i)i => ii(((SK)i)i)
+ii((SK)i)i => ii(SK)ii
+ii(SK)ii => iiSKii
+iiSKii => iiKi(ii)
+iiKi(ii) => iii
+iii
+
+WWi => (SS(SK))Wi
+(SS(SK))Wi => SS(SK)Wi
+SS(SK)Wi => SW((SK)W)i
+SW((SK)W)i => Wi(((SK)W)i)
+Wi(((SK)W)i) => (SS(SK))i(((SK)W)i)
+(SS(SK))i(((SK)W)i) => SS(SK)i(((SK)W)i)
+SS(SK)i(((SK)W)i) => Si((SK)i)(((SK)W)i)
+Si((SK)i)(((SK)W)i) => i(((SK)W)i)(((SK)i)(((SK)W)i))
+i((SK)W)i(((SK)i)(((SK)W)i)) => i(SK)Wi(((SK)i)(((SK)W)i))
+i(SK)Wi(((SK)i)(((SK)W)i)) => iSKWi(((SK)i)(((SK)W)i))
+iSKWi(((SK)i)(((SK)W)i)) => iKi(Wi)(((SK)i)(((SK)W)i))
+iKi(Wi)(((SK)i)(((SK)W)i)) => ii(((SK)i)(((SK)W)i))
+ii((SK)i)(((SK)W)i) => ii(SK)i(((SK)W)i)
+ii(SK)i(((SK)W)i) => iiSKi(((SK)W)i)
+iiSKi(((SK)W)i) => iiK(((SK)W)i)(i(((SK)W)i))
+iiK(((SK)W)i)(i(((SK)W)i)) => ii(((SK)W)i)
+ii(((SK)W)i) => ii((SK)W)i
+ii((SK)W)i => ii(SK)Wi
+ii(SK)Wi => iiSKWi
+iiSKWi => iiKi(Wi)
+iiKi(Wi) => iii
+iii
+
+-----
+xyy
+xzz
+iii
+iii

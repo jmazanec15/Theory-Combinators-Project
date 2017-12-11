@@ -1,0 +1,30 @@
+Ia => a
+a
+
+(Ia)(Ib) => Ia(Ib)
+Ia(Ib) => a(Ib)
+aIb => ab
+ab
+
+(Ib)a => Iba
+Iba => ba
+ba
+
+I((Ia)(Ib)) => ((Ia)(Ib))
+((Ia)(Ib)) => (Ia)(Ib)
+(Ia)(Ib) => Ia(Ib)
+Ia(Ib) => a(Ib)
+aIb => ab
+ab
+
+(Ib)(ab)(Ia) => Ib(ab)(Ia)
+Ib(ab)(Ia) => b(ab)(Ia)
+b(ab)Ia => b(ab)a
+b(ab)a
+
+---------
+a
+ab
+ba
+ab
+baba

@@ -1,0 +1,7 @@
+Bxyz
+BBabcd
+BBBBabcde
+------
+x(yz)
+(ab)(cd)
+((ab)c)(de)

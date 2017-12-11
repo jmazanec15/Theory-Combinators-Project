@@ -1,0 +1,23 @@
+Sabc => ac(bc)
+ac(bc)
+
+(Sbac)(Scab) => Sbac(Scab)
+Sbac(Scab) => bc(ac)(Scab)
+bc(ac)Scab => bc(ac)cb(ab)
+bc(ac)cb(ab)
+
+Sa(bc)b => ab((bc)b)
+ab((bc)b)
+
+S(cc)(aa)(bb) => (cc)(bb)((aa)(bb))
+(cc)(bb)((aa)(bb))
+
+Sbcaabc => ba(ca)abc
+ba(ca)abc
+
+----------
+ac(bc)
+bc(ac)cb(ab)
+ab((bc)b)
+(cc)(bb)((aa)(bb))
+ba(ca)abc

@@ -1,0 +1,11 @@
+SKKb
+SKba
+I(SKab)I(SKKa)b
+(S(K(SI))Kba)
+(S(K(SI))(S(KK)I)ab)
+----------
+b
+a
+bab
+ab
+ba

@@ -1,0 +1,30 @@
+Kba => b
+b
+
+(Kbb)(Kab) => Kbb(Kab)
+Kbb(Kab) => b(Kab)
+bKab => ba
+ba
+
+K(Kab)(Kaa) => (Kab)
+(Kab) => Kab
+Kab => a
+a
+
+(Kab)(b) => Kab(b)
+Kab(b) => a(b)
+a(b)
+
+(K(Kab)(Kbb))(Kaa) => K(Kab)(Kbb)(Kaa)
+K(Kab)(Kbb)(Kaa) => (Kab)(Kaa)
+(Kab)(Kaa) => Kab(Kaa)
+Kab(Kaa) => a(Kaa)
+aKaa => aa
+aa
+
+----------
+b
+ba
+a
+ab
+aa
